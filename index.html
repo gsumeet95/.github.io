@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio — YOUR NAME</title>
+  <meta name="description" content="Personal portfolio — developer, projects, contact" />
+  <style>
+    :root{--accent:#4f46e5;--bg:#0f172a;--card:#0b1220;--muted:#94a3b8;color-scheme:dark}
+    *{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;background:linear-gradient(180deg,#071024 0%,#071226 60%);color:#e6eef8;line-height:1.5}
+    .container{max-width:1000px;margin:36px auto;padding:0 20px}
+    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
+    .brand{font-weight:700;letter-spacing:0.2px}
+    nav a{color:var(--muted);margin-left:18px;text-decoration:none;font-weight:600}
+    .hero{display:grid;grid-template-columns:1fr 320px;gap:28px;align-items:center}
+    .hero h1{font-size:40px;margin:0 0 8px}
+    .hero h3{margin:0 0 12px;color:var(--muted);font-weight:500}
+    .cta{margin-top:18px}
+    .btn{display:inline-block;background:var(--accent);color:white;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
+    .card{background:rgba(255,255,255,0.02);padding:20px;border-radius:12px}
+    .avatar{width:100%;border-radius:12px;object-fit:cover;height:320px}
+    section{margin-top:28px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+    .skill{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:14px;border-radius:10px}
+    .projects .project{display:flex;gap:12px;align-items:center}
+    .project img{width:88px;height:64px;border-radius:8px;object-fit:cover}
+    footer{margin-top:36px;padding:20px;text-align:center;color:var(--muted);font-size:13px}
+    @media (max-width:880px){.hero{grid-template-columns:1fr}.avatar{height:220px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">Portfolio.</div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skill</a>
+        <a href="#projects">Project</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="home">
+      <div class="hero">
+        <div>
+          <p style="margin:0;color:var(--muted)">### Hi, Myself</p>
+          <h1>YOUR NAME</h1>
+          <h3>And I'm a Computer Science Engineer</h3>
+          <p style="color:var(--muted);max-width:70%">Innovator | SIH'2023 Finalist | Idea Pitching | Problem Solving | Entrepreneurial Mindset | Team Lead.</p>
+          <div class="cta">
+            <a class="btn" href="#" id="downloadCv">Download CV</a>
+          </div>
+        </div>
+        <div class="card">
+          <img class="avatar" src="https://picsum.photos/520/520?gravity=center" alt="avatar">
+        </div>
+      </div>
+
+      <section id="about" class="card">
+        <h2>About Me</h2>
+        <p>I am <strong>YOUR NAME</strong>, B.Tech CSE student with a passion for backend Development, AI, Machine learning, and a hobby in IoT projects. SIH'2023 Finalist. Specializing in IoT, Team Leadership, and Entrepreneurship. Eager learner, seeking opportunities to delve deeper into these domains. Ranked 3rd in University-Level Hackathon 2024. Currently studying at <em>GIET University Gunupur</em>. Based in <em>Balangir, Odisha</em>.</p>
+        <p><a href="#skills">Know More</a></p>
+      </section>
+
+      <section id="skills">
+        <h2>My Skills</h2>
+        <div class="grid">
+          <div class="skill">
+            <h4>Leadership and Management</h4>
+            <p style="color:var(--muted);margin:6px 0">Effective communication | Collaborations | Accountability | Adaptable.</p>
+          </div>
+          <div class="skill">
+            <h4>Hackathon Participation</h4>
+            <p style="color:var(--muted);margin:6px 0">Emerged as SIH'2023 Finalist | 3rd Position: University Level Hackathon | Focused Smart Automation</p>
+          </div>
+          <div class="skill">
+            <h4>Technology</h4>
+            <p style="color:var(--muted);margin:6px 0">JavaScript | Node.js | Python (AI & ML) | Internet of Things (IoT)</p>
+          </div>
+          <div class="skill">
+            <h4>Entrepreneurship</h4>
+            <p style="color:var(--muted);margin:6px 0">Interested in Idea Pitching | Startup India | Bootcamps</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="projects">
+        <h2>My Projects</h2>
+        <div class="grid">
+          <div class="card project">
+            <img src="https://picsum.photos/200/120?random=1" alt="proj1">
+            <div>
+              <h4>SPLS</h4>
+              <p style="color:var(--muted);margin:6px 0">Selected for SIH 2023, SPLS is a Smart Automation project integrating Data Analysis and IoT technologies.</p>
+            </div>
+          </div>
+
+          <div class="card project">
+            <img src="https://picsum.photos/200/120?random=2" alt="proj2">
+            <div>
+              <h4>QuickPay Transfer</h4>
+              <p style="color:var(--muted);margin:6px 0">QuickPay Transfer aims to enhance the online payment experience, streamlining the process for users.</p>
+            </div>
+          </div>
+
+          <div class="card project">
+            <img src="https://picsum.photos/200/120?random=3" alt="proj3">
+            <div>
+              <h4>IoT Projects</h4>
+              <p style="color:var(--muted);margin:6px 0">Featuring IoT projects including a DOS attack tool and experiments with ESP8266 modules.</p>
+            </div>
+          </div>
+
+          <div class="card project">
+            <img src="https://picsum.photos/200/120?random=4" alt="proj4">
+            <div>
+              <h4>Web Development</h4>
+              <p style="color:var(--muted);margin:6px 0">Explore the world of web development with projects showcasing HTML, CSS, and JavaScript skills.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="card">
+        <h2>Contact Me</h2>
+        <p>Send Message</p>
+        <form action="mailto:youremail@example.com" method="post" enctype="text/plain">
+          <label style="display:block;margin-bottom:6px">Name</label>
+          <input name="name" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit">
+          <label style="display:block;margin:12px 0 6px">Message</label>
+          <textarea name="message" rows="4" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit"></textarea>
+          <div style="margin-top:12px">
+            <button type="submit" class="btn">Send</button>
+          </div>
+        </form>
+        <p style="margin-top:12px;color:var(--muted)">Connect with me on social media!</p>
+      </section>
+
+    </main>
+
+    <footer>
+      All Rights Reserved © <span id="year"></span> | YOUR NAME
+    </footer>
+  </div>
+
+  <script>
+    // small helpers
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('downloadCv').addEventListener('click',function(e){
+      // replace with actual CV link or generate a PDF link
+      e.preventDefault();
+      window.open('https://example.com/your-cv.pdf','_blank');
+    });
+  </script>
+</body>
+</html>
