@@ -2,41 +2,49 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio — Sumeet Gupta</title>
-  <meta name="description" content="Personal portfolio — developer, projects, contact" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sumeet Gupta — Backend Lead & .NET Developer</title>
+  <meta name="description" content="Sumeet Gupta — Backend Lead, .NET, API Design, AI Chatbots" />
   <style>
-    :root{--accent:#4f46e5;--bg:#0f172a;--card:#0b1220;--muted:#94a3b8;color-scheme:dark}
-    *{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;background:linear-gradient(180deg,#071024 0%,#071226 60%);color:#e6eef8;line-height:1.5}
-    .container{max-width:1000px;margin:36px auto;padding:0 20px}
-    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
-    .brand{font-weight:700;letter-spacing:0.2px}
-    nav a{color:var(--muted);margin-left:18px;text-decoration:none;font-weight:600}
-    .hero{display:grid;grid-template-columns:1fr 320px;gap:28px;align-items:center}
-    .hero h1{font-size:40px;margin:0 0 8px}
-    .hero h3{margin:0 0 12px;color:var(--muted);font-weight:500}
-    .cta{margin-top:18px}
-    .btn{display:inline-block;background:var(--accent);color:white;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
-    .card{background:rgba(255,255,255,0.02);padding:20px;border-radius:12px}
-    .avatar{width:100%;border-radius:12px;object-fit:cover;height:320px}
-    section{margin-top:28px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-    .skill{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:14px;border-radius:10px}
+    :root{
+      --accent:#4F46E5; /* indigo */
+      --bg:#f7f9fb;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --text:#0f172a;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+    .container{max-width:980px;margin:36px auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+    .brand{font-weight:700;font-size:18px;color:var(--text)}
+    nav a{color:var(--muted);margin-left:18px;text-decoration:none;font-weight:600;font-size:14px}
+    .hero{display:grid;grid-template-columns:1fr 300px;gap:28px;align-items:center}
+    .intro h1{margin:0;font-size:32px}
+    .intro p.lead{margin:8px 0 14px;color:var(--muted);font-size:15px}
+    .btn{display:inline-block;background:var(--accent);color:white;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700}
+    .card{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 6px 20px rgba(16,24,40,0.06)}
+    .avatar{width:100%;height:100%;object-fit:cover;border-radius:10px}
+    section{margin-top:26px}
+    h2{font-size:18px;margin-bottom:12px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+    .skill{padding:12px;border-radius:8px;background:#fbfdff;border:1px solid #eef2ff}
     .projects .project{display:flex;gap:12px;align-items:center}
-    .project img{width:88px;height:64px;border-radius:8px;object-fit:cover}
-    footer{margin-top:36px;padding:20px;text-align:center;color:var(--muted);font-size:13px}
-    @media (max-width:880px){.hero{grid-template-columns:1fr}.avatar{height:220px}}
+    .project img{width:110px;height:72px;border-radius:8px;object-fit:cover}
+    footer{margin-top:36px;text-align:center;color:var(--muted);font-size:13px}
+    .contact-row{display:flex;gap:12px;flex-wrap:wrap}
+    a.muted{color:var(--muted);text-decoration:none;font-weight:600}
+    @media (max-width:880px){.hero{grid-template-columns:1fr}.avatar{height:260px}}
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <div class="brand">Portfolio.</div>
+      <div class="brand">Sumeet Gupta</div>
       <nav>
-        <a href="#home">Home</a>
         <a href="#about">About</a>
-        <a href="#skills">Skill</a>
-        <a href="#projects">Project</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -44,92 +52,115 @@
     <main id="home">
       <div class="hero">
         <div>
-          <p style="margin:0;color:var(--muted)">### Hi, Myself</p>
-          <h1>Sumeet Gupta</h1>
-          <h3>And I'm a Backend Team Lead & .NET Developer</h3>
-          <p style="color:var(--muted);max-width:70%">Backend Lead | .NET Core Expert | AI Chatbot Developer | 8.5+ Years Experience in Scalable API & System Design.</p>
-          <div class="cta">
-            <a class="btn" href="#" id="downloadCv">Download CV</a>
+          <div class="intro">
+            <p style="margin:0;color:var(--muted)">Hi, I'm</p>
+            <h1>Sumeet Gupta</h1>
+            <p class="lead">Backend Lead • .NET Core • API Design • AI Chatbots — 8.5+ years building scalable backend systems, realtime features and LLM integrations.</p>
+            <p style="color:var(--muted);max-width:80%">I lead teams building high-performance APIs, realtime chat & call platforms, and AI-driven assistants. Skilled in clean architecture, Azure, CI/CD and mentoring engineering teams.</p>
+
+            <div style="margin-top:16px">
+              <a class="btn" href="/mnt/data/Sumeet_Gupta_2025.pdf" target="_blank" rel="noopener">Download CV</a>
+              <a class="btn" style="background:transparent;color:var(--accent);border:1px solid rgba(79,70,229,0.12);margin-left:10px" href="#contact">Hire / Contact</a>
+            </div>
           </div>
         </div>
-        <div class="card">
-          <img class="avatar" src="https://picsum.photos/520/520?gravity=center" alt="avatar">
+
+        <div class="card" style="display:flex;flex-direction:column;gap:12px">
+          <!-- Use the professional headshot you uploaded (local path preview) -->
+          <img class="avatar" src="/mnt/data/e409b8bf-d587-4efb-ab35-cdfefb5a965b.jpg" alt="Sumeet Gupta">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div style="font-weight:700">Sumeet Gupta</div>
+              <div style="color:var(--muted);font-size:13px">Backend Lead — Netway India (Astroyogi)</div>
+            </div>
+            <div style="text-align:right;color:var(--muted);font-size:12px">India • gsumeet95@gmail.com</div>
+          </div>
         </div>
       </div>
 
-      <section id="about" class="card">
-        <h2>About Me</h2>
-        <p>I am <strong>Sumeet Gupta</strong>, a Backend Lead / .NET Lead Developer with 8.5+ years of experience building scalable, secure, and high-performance backend systems. I specialize in .NET Core, Web API development, microservices, clean architecture, SQL Server, PostgreSQL, Azure, AWS, and AI chatbot integration using Python, FastAPI, LangChain, and OpenAI.</p>
-        <p>I currently lead backend development at <strong>Netway India Pvt Ltd (Astroyogi)</strong>, handling real-time chat, audio/video calling, streaming, and high-load systems while mentoring and managing a team of 6–10 developers.</p>
-        <p><a href="#skills">Know More</a></p>
-      </section>on>
+      <section id="about" class="card" style="margin-top:18px">
+        <h2>About</h2>
+        <p style="margin:0 0 8px">Results-driven Backend Lead / .NET Lead with 8.5+ years of experience designing, developing and leading scalable backend systems using .NET Core, C#, Web API, EF Core, SQL Server and PostgreSQL. Experienced with cloud deployments (Azure/AWS), CI/CD, and AI chatbot integrations (FastAPI, LangChain, OpenAI).</p>
+        <p style="color:var(--muted);margin-top:10px">Currently leading backend at Netway India (Astroyogi): building realtime chat & call platforms, live streaming features (Agora), and LLM-based assistant services.</p>
+      </section>
 
       <section id="skills">
-        <h2>My Skills</h2>
+        <h2>Core Skills</h2>
         <div class="grid">
           <div class="skill">
-            <h4>Backend Development</h4>
-            <p style="color:var(--muted);margin:6px 0">.NET Core, C#, Web API, EF Core, REST API Design, Authentication (JWT/OAuth2), Asynchronous Programming, Concurrency, Clean Architecture.</p>
+            <strong>Backend & .NET</strong>
+            <div style="color:var(--muted);margin-top:6px">C#, .NET Core, ASP.NET Web API, EF Core, Clean Architecture, REST API design, JWT/OAuth2.</div>
           </div>
           <div class="skill">
-            <h4>Cloud & DevOps</h4>
-            <p style="color:var(--muted);margin:6px 0">Azure Web App Service, Blob Storage, Cosmos DB, AWS S3, CI/CD (Azure DevOps), YAML Pipelines.</p>
+            <strong>Cloud & DevOps</strong>
+            <div style="color:var(--muted);margin-top:6px">Azure WebApps, Blob Storage, Azure DevOps (YAML CI/CD), AWS S3, Containerization.</div>
           </div>
           <div class="skill">
-            <h4>AI & Chatbot Development</h4>
-            <p style="color:var(--muted);margin:6px 0">LangChain, LLMs (OpenAI), FastAPI, Python-based AI chatbot development, event-driven systems.</p>
+            <strong>Realtime & Messaging</strong>
+            <div style="color:var(--muted);margin-top:6px">WebSockets, Pusher, Firebase Push, Agora, SendBird — chat, push, OBD/VoIP integrations.</div>
           </div>
           <div class="skill">
-            <h4>Team Leadership</h4>
-            <p style="color:var(--muted);margin:6px 0">Sprint Planning, Mentoring, Code Reviews, Delivery Ownership, Cross-team Collaboration.</p>
+            <strong>AI & LLMs</strong>
+            <div style="color:var(--muted);margin-top:6px">Python, FastAPI, LangChain, OpenAI integrations for chat assistants and automation.</div>
           </div>
         </div>
       </section>
 
-      <section id="projects" class="projects">" class="projects">
-        <h2>My Projects</h2>
+      <section id="projects" class="card projects">
+        <h2>Selected Projects</h2>
         <div class="grid">
-          <div class="card project">
-            <img src="https://picsum.photos/200/120?random=10" alt="proj1">
+          <div class="project" style="align-items:flex-start">
+            <img src="/mnt/data/3362e42c-dcd2-4514-a4c7-3afd46078d0c.JPG" alt="Real-time chat">
             <div>
-              <h4>Real-Time Chat & Call System</h4>
-              <p style="color:var(--muted);margin:6px 0">Designed and developed highly scalable chat and calling APIs with Agora, Pusher, Firebase Push Notifications, and WebSocket integrations.</p>
+              <h4 style="margin:0">Real-time Chat & Call System</h4>
+              <p style="color:var(--muted);margin:6px 0">Designed scalable chat and calling APIs, integrated Agora & push notifications, managed queueing and high-throughput messaging.</p>
             </div>
           </div>
 
-          <div class="card project">
-            <img src="https://picsum.photos
-
-      <section id="contact" class="card">
-        <h2>Contact Me</h2>
-        <p>Send Message</p>
-        <form action="mailto:youremail@example.com" method="post" enctype="text/plain">
-          <label style="display:block;margin-bottom:6px">Name</label>
-          <input name="name" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit">
-          <label style="display:block;margin:12px 0 6px">Message</label>
-          <textarea name="message" rows="4" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit"></textarea>
-          <div style="margin-top:12px">
-            <button type="submit" class="btn">Send</button>
+          <div class="project">
+            <img src="https://picsum.photos/200/120?random=21" alt="AI Chatbot">
+            <div>
+              <h4 style="margin:0">AI Chatbot (LLM)</h4>
+              <p style="color:var(--muted);margin:6px 0">Built a LangChain/OpenAI-powered assistant with FastAPI, deployed on Azure with CI/CD and event logging.</p>
+            </div>
           </div>
-        </form>
-        <p style="margin-top:12px;color:var(--muted)">Connect with me on social media!</p>
+
+          <div class="project">
+            <img src="https://picsum.photos/200/120?random=22" alt="Streaming">
+            <div>
+              <h4 style="margin:0">Live Streaming Platform</h4>
+              <p style="color:var(--muted);margin:6px 0">Integrated Agora SDK for audio/video streaming and recording with real-time notifications and session management.</p>
+            </div>
+          </div>
+
+          <div class="project">
+            <img src="https://picsum.photos/200/120?random=23" alt="APIs">
+            <div>
+              <h4 style="margin:0">High-Performance APIs</h4>
+              <p style="color:var(--muted);margin:6px 0">Optimized REST APIs for concurrency, async processing, caching and monitoring in high-load scenarios.</p>
+            </div>
+          </div>
+        </div>
       </section>
 
+      <section id="contact" class="card" style="margin-top:18px">
+        <h2>Contact</h2>
+        <p style="margin:0 0 12px">Email: <a class="muted" href="mailto:gsumeet95@gmail.com">gsumeet95@gmail.com</a> • Phone: <span style="color:var(--muted)">+91 9785678298</span></p>
+        <div class="contact-row">
+          <a class="btn" href="mailto:gsumeet95@gmail.com">Email Me</a>
+          <a class="btn" style="background:transparent;color:var(--accent);border:1px solid rgba(79,70,229,0.12)" href="/mnt/data/Sumeet_Gupta_2025.pdf" target="_blank">Download CV (PDF)</a>
+          <a class="btn" style="background:#111827;color:white;margin-left:auto" href="https://www.linkedin.com/in/sumeet-gupta-107ab698" target="_blank">LinkedIn</a>
+        </div>
+      </section>
     </main>
 
     <footer>
-      All Rights Reserved © <span id="year"></span> | Sumeet Gupta
+      © <span id="year"></span> Sumeet Gupta — Backend Lead. Built with care.
     </footer>
   </div>
 
   <script>
-    // small helpers
     document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('downloadCv').addEventListener('click',function(e){
-      // replace with actual CV link or generate a PDF link
-      e.preventDefault();
-      window.open('https://example.com/your-cv.pdf','_blank');
-    });
   </script>
 </body>
 </html>
