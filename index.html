@@ -4,955 +4,492 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sumeet Gupta — Senior .NET Tech Lead</title>
+<meta name="description" content="Sumeet Gupta — Senior .NET Tech Lead. 9+ years architecting distributed systems, leading engineering teams, and shipping AI/LLM products at scale.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #050810;
-  --surface: #0c1220;
-  --surface2: #111c2e;
-  --border: rgba(99,179,237,0.1);
-  --accent: #63b3ed;
-  --accent2: #9f7aea;
-  --accent3: #68d391;
-  --gold: #f6c90e;
-  --text: #e2e8f0;
-  --muted: #64748b;
-  --dim: #94a3b8;
-}
+  :root{
+    --navy-900:#0B1622;
+    --navy-800:#111F30;
+    --navy-700:#182B40;
+    --paper:#F4F2EA;
+    --ink:#E9ECEA;
+    --ink-soft:#8CA0AC;
+    --ink-faint:#5C6E7A;
+    --line:#25384C;
+    --amber:#E7A33E;
+    --cyan:#6FB8CC;
+    --sans: 'Space Grotesk', -apple-system, sans-serif;
+    --mono: 'IBM Plex Mono', ui-monospace, monospace;
+    --maxw: 1100px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--navy-900);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+  ::selection{background:var(--amber); color:var(--navy-900);}
+  :focus-visible{outline:2px solid var(--amber); outline-offset:3px;}
 
-* { margin:0; padding:0; box-sizing:border-box; }
+  /* background grid texture */
+  .gridbg{
+    position:fixed; inset:0; z-index:0; pointer-events:none;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 64px 64px;
+    opacity:0.35;
+    mask-image: linear-gradient(to bottom, black, black 60%, transparent 100%);
+  }
 
-html { scroll-behavior: smooth; }
+  header, main, footer{position:relative; z-index:1;}
 
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'JetBrains Mono', monospace;
-  overflow-x: hidden;
-  cursor: none;
-}
+  /* NAV */
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:22px 28px; max-width:var(--maxw); margin:0 auto;
+  }
+  .nav .mark{
+    font-family:var(--mono); font-size:14px; letter-spacing:0.04em;
+    border:1px solid var(--line); padding:5px 10px; border-radius:3px; color:var(--cyan);
+  }
+  .nav ul{list-style:none; display:flex; gap:28px; margin:0; padding:0;}
+  .nav a{text-decoration:none; color:var(--ink-soft); font-size:14.5px; transition:color .15s;}
+  .nav a:hover{color:var(--ink);}
+  .nav .cta{
+    border:1px solid var(--amber); color:var(--amber); padding:7px 14px;
+    border-radius:3px; font-size:13.5px; text-decoration:none; font-family:var(--mono);
+  }
+  .nav .burger{display:none;}
+  @media (max-width:760px){
+    .nav ul{display:none;}
+    .nav .cta{display:none;}
+  }
 
-/* Custom cursor */
-.cursor {
-  width: 8px; height: 8px;
-  background: var(--accent);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-  transition: transform 0.1s;
-  mix-blend-mode: screen;
-}
-.cursor-ring {
-  width: 32px; height: 32px;
-  border: 1px solid rgba(99,179,237,0.4);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9998;
-  transition: all 0.15s ease;
-}
+  /* HERO */
+  .hero{
+    padding:52px 0 40px;
+    border-bottom:1px solid var(--line);
+  }
+  .hero .grid{
+    display:grid; grid-template-columns: 1.05fr 0.95fr; gap:20px; align-items:center;
+  }
+  .badge{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:var(--mono); font-size:12.5px; color:var(--cyan);
+    border:1px dashed var(--line); padding:6px 12px; border-radius:20px;
+    margin-bottom:22px;
+  }
+  .badge .dot{width:6px; height:6px; border-radius:50%; background:var(--cyan); box-shadow:0 0 0 3px rgba(111,184,204,0.15);}
+  h1{
+    font-size:clamp(38px, 5.4vw, 60px); line-height:1.04; margin:0 0 6px; font-weight:700; letter-spacing:-0.01em;
+  }
+  h1 span{display:block; color:var(--ink-soft); font-size:0.44em; font-weight:500; margin-top:14px; letter-spacing:0.01em;}
+  .lede{
+    color:var(--ink-soft); font-size:17px; max-width:46ch; margin:20px 0 28px;
+  }
+  .lede b{color:var(--ink); font-weight:600;}
+  .hero-actions{display:flex; gap:12px; flex-wrap:wrap;}
+  .btn{
+    font-family:var(--mono); font-size:14px; text-decoration:none; padding:11px 18px;
+    border-radius:3px; display:inline-block; border:1px solid transparent;
+  }
+  .btn.primary{background:var(--amber); color:var(--navy-900); font-weight:500;}
+  .btn.ghost{border-color:var(--line); color:var(--ink);}
+  .btn.ghost:hover{border-color:var(--ink-soft);}
 
-/* Noise overlay */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.4;
-}
+  .diagram-frame{
+    border:1px solid var(--line); border-radius:6px; padding:18px 14px;
+    background:linear-gradient(180deg, var(--navy-800), var(--navy-900));
+  }
+  .diagram-frame .cap{
+    font-family:var(--mono); font-size:11px; color:var(--ink-faint); display:flex; justify-content:space-between; margin-bottom:6px;
+  }
+  @media (max-width:900px){
+    .hero .grid{grid-template-columns:1fr;}
+  }
 
-/* Grid background */
-.grid-overlay {
-  position: fixed;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(99,179,237,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(99,179,237,0.03) 1px, transparent 1px);
-  background-size: 40px 40px;
-  pointer-events: none;
-  z-index: 0;
-}
+  /* stats strip */
+  .stats{padding:34px 0; border-bottom:1px solid var(--line);}
+  .stats ul{
+    list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(4,1fr); gap:0;
+  }
+  .stats li{padding:0 22px; border-left:1px solid var(--line);}
+  .stats li:first-child{border-left:none; padding-left:0;}
+  .stats .num{font-size:30px; font-weight:700; color:var(--amber); font-family:var(--sans);}
+  .stats .lbl{font-size:13px; color:var(--ink-soft); margin-top:4px;}
+  @media (max-width:760px){
+    .stats ul{grid-template-columns:repeat(2,1fr); row-gap:26px;}
+    .stats li:nth-child(3){border-left:none;}
+  }
 
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 32px;
-  position: relative;
-  z-index: 2;
-}
+  /* SECTION HEADS */
+  .section{padding:72px 0;}
+  .section-head{margin-bottom:36px; max-width:60ch;}
+  .section-head .kicker{font-family:var(--mono); font-size:12.5px; color:var(--cyan); margin-bottom:10px; display:block;}
+  .section-head h2{font-size:clamp(26px,3vw,34px); margin:0 0 10px; font-weight:700;}
+  .section-head p{color:var(--ink-soft); margin:0; font-size:15.5px;}
 
-/* ── NAV ── */
-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  padding: 16px 0;
-  background: rgba(5,8,16,0.85);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-}
-.nav-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 32px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.nav-logo {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: 18px;
-  letter-spacing: -0.5px;
-  color: #fff;
-}
-.nav-logo span { color: var(--accent); }
-.nav-links {
-  display: flex;
-  gap: 32px;
-  list-style: none;
-}
-.nav-links a {
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 11px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  transition: color 0.2s;
-}
-.nav-links a:hover { color: var(--accent); }
+  /* STACK / SKILLS */
+  .stack{border:1px solid var(--line); border-radius:6px; overflow:hidden;}
+  .layer{
+    display:grid; grid-template-columns:220px 1fr; gap:20px;
+    padding:18px 22px; border-top:1px solid var(--line);
+  }
+  .layer:first-child{border-top:none;}
+  .layer:nth-child(odd){background:rgba(255,255,255,0.012);}
+  .layer .lname{font-weight:600; font-size:15px;}
+  .layer .lname small{display:block; font-family:var(--mono); font-size:11.5px; color:var(--ink-faint); font-weight:400; margin-top:3px;}
+  .tags{display:flex; flex-wrap:wrap; gap:8px;}
+  .tag{
+    font-family:var(--mono); font-size:12.5px; color:var(--ink-soft);
+    border:1px solid var(--line); padding:5px 10px; border-radius:3px;
+  }
+  @media (max-width:700px){
+    .layer{grid-template-columns:1fr; gap:8px;}
+  }
 
-/* ── HERO ── */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding-top: 80px;
-  position: relative;
-  overflow: hidden;
-}
+  /* TIMELINE */
+  .timeline{position:relative; padding-left:28px; border-left:1px solid var(--line);}
+  .tl-item{position:relative; padding-bottom:44px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{
+    content:""; position:absolute; left:-33px; top:4px; width:9px; height:9px;
+    border-radius:50%; background:var(--navy-900); border:2px solid var(--amber);
+  }
+  .tl-date{font-family:var(--mono); font-size:12.5px; color:var(--cyan); margin-bottom:6px;}
+  .tl-role{font-size:19px; font-weight:700; margin:0 0 2px;}
+  .tl-org{color:var(--ink-soft); font-size:14.5px; margin-bottom:14px;}
+  .tl-item ul{margin:0; padding-left:18px; color:var(--ink-soft); font-size:14.5px;}
+  .tl-item li{margin-bottom:7px;}
+  .tl-item li b{color:var(--ink); font-weight:600;}
+  .award{
+    display:inline-block; margin-top:14px; font-family:var(--mono); font-size:12px; color:var(--amber);
+    border:1px dashed rgba(231,163,62,0.4); padding:5px 10px; border-radius:20px;
+  }
 
-/* Glowing orbs */
-.orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  pointer-events: none;
-}
-.orb-1 {
-  width: 500px; height: 500px;
-  background: radial-gradient(circle, rgba(99,179,237,0.08), transparent 70%);
-  top: -100px; right: -100px;
-}
-.orb-2 {
-  width: 400px; height: 400px;
-  background: radial-gradient(circle, rgba(159,122,234,0.06), transparent 70%);
-  bottom: -50px; left: -100px;
-}
-.orb-3 {
-  width: 300px; height: 300px;
-  background: radial-gradient(circle, rgba(104,211,145,0.05), transparent 70%);
-  top: 50%; left: 50%;
-  transform: translate(-50%,-50%);
-}
+  /* PROJECTS */
+  .proj{
+    border:1px solid var(--line); border-radius:6px; margin-bottom:22px; overflow:hidden;
+  }
+  .proj-head{
+    display:flex; justify-content:space-between; align-items:flex-start; gap:16px;
+    padding:22px 24px; flex-wrap:wrap;
+  }
+  .proj-head h3{margin:0 0 4px; font-size:21px;}
+  .proj-head .role{color:var(--ink-soft); font-size:13.5px;}
+  .proj-metrics{display:flex; gap:18px; flex-wrap:wrap;}
+  .proj-metrics div{text-align:right;}
+  .proj-metrics .n{font-family:var(--mono); color:var(--amber); font-size:16px; display:block;}
+  .proj-metrics .l{font-size:11px; color:var(--ink-faint);}
+  .proj-body{padding:0 24px 24px;}
+  .proj-body p{color:var(--ink-soft); font-size:14.5px; max-width:70ch; margin:0 0 16px;}
+  .flow{
+    display:flex; align-items:center; flex-wrap:wrap; gap:0; font-family:var(--mono); font-size:12px;
+    border-top:1px solid var(--line); padding-top:16px;
+  }
+  .flow .node{
+    border:1px solid var(--line); border-radius:4px; padding:7px 11px; color:var(--ink);
+    background:var(--navy-800); white-space:nowrap; margin-bottom:8px;
+  }
+  .flow .arrow{color:var(--ink-faint); padding:0 8px; margin-bottom:8px;}
+  .proj-stack{color:var(--ink-faint); font-family:var(--mono); font-size:12px; margin-top:14px;}
 
-.hero-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-  width: 100%;
-}
+  /* CONTACT */
+  .contact{
+    background:var(--paper); color:var(--navy-900); border-radius:10px; padding:52px 40px;
+    display:grid; grid-template-columns:1.2fr 1fr; gap:30px; align-items:center;
+  }
+  .contact h2{font-size:clamp(24px,3vw,32px); margin:0 0 10px;}
+  .contact p{color:#4C5A63; margin:0; max-width:44ch;}
+  .contact-links{display:flex; flex-direction:column; gap:10px;}
+  .contact-links a{
+    display:flex; justify-content:space-between; text-decoration:none; color:var(--navy-900);
+    border-bottom:1px solid rgba(11,22,34,0.15); padding:12px 2px; font-size:15px;
+  }
+  .contact-links a span:last-child{font-family:var(--mono); color:#6b7d88; font-size:13px;}
+  @media (max-width:760px){
+    .contact{grid-template-columns:1fr; padding:34px 22px;}
+  }
 
-.hero-label {
-  font-size: 11px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.hero-label::before {
-  content: '';
-  width: 24px; height: 1px;
-  background: var(--accent);
-}
+  footer{padding:34px 0 50px; color:var(--ink-faint); font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
+  footer a{color:var(--ink-soft); text-decoration:none;}
 
-.hero-name {
-  font-family: 'Syne', sans-serif;
-  font-size: clamp(42px, 5vw, 64px);
-  font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -2px;
-  color: #fff;
-  margin-bottom: 16px;
-}
-.hero-name .line2 {
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(255,255,255,0.3);
-}
-
-.hero-role {
-  font-family: 'Instrument Serif', serif;
-  font-style: italic;
-  font-size: 22px;
-  color: var(--dim);
-  margin-bottom: 28px;
-  line-height: 1.4;
-}
-.hero-role strong {
-  color: var(--accent);
-  font-style: normal;
-  font-family: 'Syne', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-
-.hero-desc {
-  font-size: 13px;
-  line-height: 1.8;
-  color: var(--dim);
-  margin-bottom: 40px;
-  max-width: 480px;
-}
-
-.hero-cta {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-.btn-primary {
-  background: var(--accent);
-  color: #000;
-  padding: 12px 28px;
-  font-family: 'Syne', sans-serif;
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.5px;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: all 0.2s;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-.btn-primary:hover {
-  background: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(99,179,237,0.3);
-}
-.btn-secondary {
-  border: 1px solid var(--border);
-  color: var(--dim);
-  padding: 12px 28px;
-  font-family: 'Syne', sans-serif;
-  font-weight: 600;
-  font-size: 13px;
-  letter-spacing: 0.5px;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: all 0.2s;
-}
-.btn-secondary:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  transform: translateY(-2px);
-}
-
-/* Hero right — stats */
-.hero-right {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.stat-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 20px 24px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  transition: all 0.3s;
-  animation: fadeSlideIn 0.6s ease both;
-}
-.stat-card:hover {
-  border-color: rgba(99,179,237,0.3);
-  transform: translateX(4px);
-  background: var(--surface2);
-}
-.stat-num {
-  font-family: 'Syne', sans-serif;
-  font-size: 32px;
-  font-weight: 800;
-  color: var(--accent);
-  line-height: 1;
-  min-width: 80px;
-}
-.stat-num.green { color: var(--accent3); }
-.stat-num.purple { color: var(--accent2); }
-.stat-num.gold { color: var(--gold); }
-.stat-label { font-size: 12px; color: var(--dim); line-height: 1.5; }
-.stat-label strong { display: block; color: var(--text); font-size: 14px; margin-bottom: 2px; }
-
-/* ── SECTIONS ── */
-section {
-  padding: 100px 0;
-}
-
-.section-label {
-  font-size: 11px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 12px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.section-label::before {
-  content: '';
-  width: 24px; height: 1px;
-  background: var(--accent);
-}
-
-.section-title {
-  font-family: 'Syne', sans-serif;
-  font-size: clamp(28px, 3vw, 40px);
-  font-weight: 800;
-  letter-spacing: -1px;
-  color: #fff;
-  margin-bottom: 60px;
-}
-.section-title span { color: var(--accent); }
-
-/* ── SKILLS ── */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-
-.skill-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 24px;
-  transition: all 0.3s;
-  position: relative;
-  overflow: hidden;
-}
-.skill-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent), var(--accent2));
-  transform: scaleX(0);
-  transition: transform 0.3s;
-  transform-origin: left;
-}
-.skill-card:hover::before { transform: scaleX(1); }
-.skill-card:hover {
-  border-color: rgba(99,179,237,0.2);
-  transform: translateY(-4px);
-  background: var(--surface2);
-}
-
-.skill-icon {
-  font-size: 28px;
-  margin-bottom: 14px;
-  display: block;
-}
-.skill-title {
-  font-family: 'Syne', sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  color: #fff;
-  margin-bottom: 10px;
-  letter-spacing: 0.3px;
-}
-.skill-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-}
-.skill-tag {
-  background: rgba(99,179,237,0.08);
-  border: 1px solid rgba(99,179,237,0.12);
-  border-radius: 3px;
-  padding: 2px 7px;
-  font-size: 10px;
-  color: var(--dim);
-  letter-spacing: 0.3px;
-}
-
-/* ── EXPERIENCE ── */
-.timeline {
-  position: relative;
-  padding-left: 32px;
-}
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 0; top: 8px; bottom: 8px;
-  width: 1px;
-  background: linear-gradient(to bottom, var(--accent), var(--accent2), transparent);
-}
-
-.timeline-item {
-  position: relative;
-  margin-bottom: 48px;
-  animation: fadeSlideIn 0.5s ease both;
-}
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: -36px; top: 8px;
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 0 3px rgba(99,179,237,0.2);
-}
-
-.timeline-date {
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 8px;
-}
-.timeline-title {
-  font-family: 'Syne', sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 4px;
-}
-.timeline-company {
-  font-size: 13px;
-  color: var(--accent2);
-  margin-bottom: 16px;
-  font-family: 'JetBrains Mono', monospace;
-}
-.timeline-bullets {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.timeline-bullets li {
-  font-size: 13px;
-  color: var(--dim);
-  line-height: 1.6;
-  padding-left: 16px;
-  position: relative;
-}
-.timeline-bullets li::before {
-  content: '▸';
-  position: absolute;
-  left: 0;
-  color: var(--accent2);
-  font-size: 10px;
-  top: 3px;
-}
-
-/* Highlight badge */
-.highlight-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(246,201,14,0.08);
-  border: 1px solid rgba(246,201,14,0.2);
-  border-radius: 4px;
-  padding: 6px 12px;
-  font-size: 12px;
-  color: var(--gold);
-  margin-top: 12px;
-}
-
-/* ── PROJECTS ── */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.project-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 28px;
-  transition: all 0.3s;
-  position: relative;
-  overflow: hidden;
-}
-.project-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(99,179,237,0.03), transparent);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-.project-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(99,179,237,0.25);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-}
-.project-card:hover::after { opacity: 1; }
-
-.project-emoji {
-  font-size: 32px;
-  margin-bottom: 16px;
-  display: block;
-}
-.project-name {
-  font-family: 'Syne', sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 8px;
-}
-.project-desc {
-  font-size: 12px;
-  color: var(--dim);
-  line-height: 1.7;
-  margin-bottom: 16px;
-}
-.project-impact {
-  font-size: 11px;
-  color: var(--accent3);
-  letter-spacing: 0.5px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.project-impact::before { content: '↗'; }
-
-/* ── CONTACT ── */
-.contact-section {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 60px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.contact-section::before {
-  content: '';
-  position: absolute;
-  top: -100px; left: 50%;
-  transform: translateX(-50%);
-  width: 400px; height: 400px;
-  background: radial-gradient(circle, rgba(99,179,237,0.05), transparent 70%);
-  pointer-events: none;
-}
-.contact-title {
-  font-family: 'Syne', sans-serif;
-  font-size: 36px;
-  font-weight: 800;
-  letter-spacing: -1px;
-  color: #fff;
-  margin-bottom: 12px;
-}
-.contact-sub {
-  font-size: 14px;
-  color: var(--dim);
-  margin-bottom: 40px;
-  line-height: 1.7;
-}
-.contact-links {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-.contact-link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 12px 20px;
-  color: var(--dim);
-  text-decoration: none;
-  font-size: 13px;
-  transition: all 0.2s;
-}
-.contact-link:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  transform: translateY(-2px);
-}
-
-/* ── FOOTER ── */
-footer {
-  padding: 32px 0;
-  border-top: 1px solid var(--border);
-  text-align: center;
-  font-size: 12px;
-  color: var(--muted);
-}
-
-/* ── ANIMATIONS ── */
-@keyframes fadeSlideIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.hero-label { animation: fadeSlideIn 0.5s ease 0.1s both; }
-.hero-name { animation: fadeSlideIn 0.5s ease 0.2s both; }
-.hero-role { animation: fadeSlideIn 0.5s ease 0.3s both; }
-.hero-desc { animation: fadeSlideIn 0.5s ease 0.4s both; }
-.hero-cta { animation: fadeSlideIn 0.5s ease 0.5s both; }
-.stat-card:nth-child(1) { animation-delay: 0.3s; }
-.stat-card:nth-child(2) { animation-delay: 0.4s; }
-.stat-card:nth-child(3) { animation-delay: 0.5s; }
-.stat-card:nth-child(4) { animation-delay: 0.6s; }
-
-/* Scroll reveal */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease;
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Available badge */
-.available-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(104,211,145,0.08);
-  border: 1px solid rgba(104,211,145,0.2);
-  border-radius: 20px;
-  padding: 5px 12px;
-  font-size: 11px;
-  color: var(--accent3);
-  margin-bottom: 20px;
-  letter-spacing: 0.5px;
-}
-.available-dot {
-  width: 6px; height: 6px;
-  background: var(--accent3);
-  border-radius: 50%;
-  animation: pulse 2s infinite;
-}
-@keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(0.8); }
-}
-
-@media (max-width: 768px) {
-  .hero-content { grid-template-columns: 1fr; gap: 48px; }
-  .skills-grid { grid-template-columns: 1fr; }
-  .projects-grid { grid-template-columns: 1fr; }
-  .contact-section { padding: 40px 24px; }
-  .nav-links { display: none; }
-}
+  @media (prefers-reduced-motion: no-preference){
+    .draw{stroke-dasharray:400; stroke-dashoffset:400; animation:draw 1.6s ease forwards;}
+    .draw.d2{animation-delay:.25s;}
+    .draw.d3{animation-delay:.5s;}
+    .draw.d4{animation-delay:.75s;}
+    @keyframes draw{to{stroke-dashoffset:0;}}
+    .pulse{animation:pulse 2.4s ease-in-out infinite;}
+    @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
+  }
 </style>
 </head>
 <body>
+<div class="gridbg"></div>
 
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
-<div class="grid-overlay"></div>
-
-<!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <div class="nav-logo">SG<span>.</span></div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
+<header>
+  <nav class="nav">
+    <a href="#top" class="mark">SG</a>
+    <ul>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-  </div>
-</nav>
+    <a class="cta" href="mailto:gsumeet95@gmail.com">Get in touch</a>
+  </nav>
+</header>
 
-<!-- HERO -->
-<section class="hero" id="about">
-  <div class="orb orb-1"></div>
-  <div class="orb orb-2"></div>
-  <div class="orb orb-3"></div>
-  <div class="container">
-    <div class="hero-content">
-      <div class="hero-left">
-        <div class="available-badge">
-          <div class="available-dot"></div>
-          Open to Opportunities
-        </div>
-        <div class="hero-label">Based in Gurugram, India</div>
-        <h1 class="hero-name">
-          Sumeet<br>
-          <span class="line2">Gupta</span>
-        </h1>
-        <div class="hero-role">
-          <strong>.NET Tech Lead</strong><br>
-          Architecting distributed systems<br>& leading cross-functional teams
-        </div>
-        <p class="hero-desc">
-          9+ years building high-performance platforms at scale. Currently leading Backend, AI, Android, iOS & Web teams at Astroyogi — serving 5M+ users with 99.9% uptime. Passionate about clean architecture, AI-driven solutions, and engineering excellence.
-        </p>
-        <div class="hero-cta">
-          <a href="mailto:gsumeet95@gmail.com" class="btn-primary">↗ Get in Touch</a>
-          <a href="https://www.linkedin.com/in/sumeet-gupta-107ab698" class="btn-secondary" target="_blank">LinkedIn</a>
+<main id="top">
+
+  <section class="hero wrap">
+    <div class="grid">
+      <div>
+        <span class="badge"><span class="dot pulse"></span>Open to GCC, Europe, Malaysia &amp; remote roles</span>
+        <h1>Sumeet Gupta<span>Senior .NET Tech Lead — distributed systems, Azure &amp; AI/LLM engineering</span></h1>
+        <p class="lede">9+ years designing backend architecture and leading engineering teams. Currently running Backend, AI, Android, iOS &amp; Web at Astroyogi, where <b>Yogi Live</b> handles 20K+ daily consultations for 5M+ users at 99.9% uptime.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="mailto:gsumeet95@gmail.com">Email me</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/sumeet-gupta-107ab698" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn ghost" href="tel:+919785678298">+91 97856 78298</a>
         </div>
       </div>
-
-      <div class="hero-right">
-        <div class="stat-card">
-          <div class="stat-num">9+</div>
-          <div class="stat-label"><strong>Years of Experience</strong>Distributed systems & backend architecture</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num green">5M+</div>
-          <div class="stat-label"><strong>Users Served</strong>Real-time platforms at 99.9% uptime</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num purple">20K+</div>
-          <div class="stat-label"><strong>Daily Consultations</strong>Yogi Live — real-time chat & streaming</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num gold">60%</div>
-          <div class="stat-label"><strong>Faster Release Cycles</strong>Azure DevOps CI/CD automation</div>
-        </div>
+      <div class="diagram-frame">
+        <div class="cap"><span>fig. 01 — request path</span><span>yogi live</span></div>
+        <svg viewBox="0 0 360 300" width="100%" xmlns="http://www.w3.org/2000/svg">
+          <g fill="none" stroke="#2A3F55" stroke-width="1">
+            <path d="M60 40 L60 90"/><path d="M60 90 L180 90"/><path d="M180 90 L300 90"/>
+            <path d="M180 90 L180 150"/><path d="M180 150 L100 200"/><path d="M180 150 L260 200"/>
+            <path d="M100 200 L100 250"/><path d="M260 200 L260 250"/>
+          </g>
+          <g fill="none" stroke="#6FB8CC" stroke-width="1.6">
+            <path class="draw" d="M60 40 L60 90 L180 90"/>
+            <path class="draw d2" d="M180 90 L300 90"/>
+            <path class="draw d3" d="M180 90 L180 150 L100 200 L100 250"/>
+            <path class="draw d4" d="M180 150 L260 200 L260 250"/>
+          </g>
+          <g font-family="IBM Plex Mono" font-size="10.5" fill="#8CA0AC">
+            <rect x="20" y="20" width="80" height="26" rx="3" fill="#111F30" stroke="#2A3F55"/>
+            <text x="60" y="37" text-anchor="middle" fill="#E9ECEA">client app</text>
+            <rect x="140" y="76" width="80" height="26" rx="3" fill="#111F30" stroke="#2A3F55"/>
+            <text x="180" y="93" text-anchor="middle" fill="#E9ECEA">api gateway</text>
+            <rect x="260" y="76" width="80" height="26" rx="3" fill="#111F30" stroke="#E7A33E"/>
+            <text x="300" y="93" text-anchor="middle" fill="#E7A33E">auth · jwt</text>
+            <rect x="140" y="136" width="80" height="26" rx="3" fill="#111F30" stroke="#2A3F55"/>
+            <text x="180" y="153" text-anchor="middle" fill="#E9ECEA">svc bus</text>
+            <rect x="60" y="186" width="80" height="26" rx="3" fill="#111F30" stroke="#2A3F55"/>
+            <text x="100" y="203" text-anchor="middle" fill="#E9ECEA">agora/send.</text>
+            <rect x="220" y="186" width="80" height="26" rx="3" fill="#111F30" stroke="#2A3F55"/>
+            <text x="260" y="203" text-anchor="middle" fill="#E9ECEA">.net core</text>
+            <rect x="60" y="236" width="80" height="26" rx="3" fill="#111F30" stroke="#2A3F55"/>
+            <text x="100" y="253" text-anchor="middle" fill="#E9ECEA">redis</text>
+            <rect x="220" y="236" width="80" height="26" rx="3" fill="#111F30" stroke="#2A3F55"/>
+            <text x="260" y="253" text-anchor="middle" fill="#E9ECEA">cosmos db</text>
+          </g>
+        </svg>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- SKILLS -->
-<section id="skills">
-  <div class="container">
-    <div class="section-label reveal">Technical Expertise</div>
-    <h2 class="section-title reveal">What I <span>Build With</span></h2>
-    <div class="skills-grid">
+  <section class="stats wrap">
+    <ul>
+      <li><div class="num">9+</div><div class="lbl">years in backend &amp; distributed systems</div></li>
+      <li><div class="num">5M+</div><div class="lbl">users on production platforms</div></li>
+      <li><div class="num">20K+</div><div class="lbl">daily consultations on Yogi Live</div></li>
+      <li><div class="num">60%</div><div class="lbl">faster releases after CI/CD overhaul</div></li>
+    </ul>
+  </section>
 
-      <div class="skill-card reveal">
-        <span class="skill-icon">⚙️</span>
-        <div class="skill-title">Languages & Backend</div>
-        <div class="skill-tags">
-          <span class="skill-tag">C#</span><span class="skill-tag">.NET Core</span><span class="skill-tag">ASP.NET</span><span class="skill-tag">Web API</span><span class="skill-tag">Python</span><span class="skill-tag">FastAPI</span><span class="skill-tag">Entity Framework</span><span class="skill-tag">Async Programming</span>
-        </div>
-      </div>
-
-      <div class="skill-card reveal">
-        <span class="skill-icon">🏛️</span>
-        <div class="skill-title">Architecture Style</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Microservices</span><span class="skill-tag">Event-Driven</span><span class="skill-tag">Cloud-Native</span><span class="skill-tag">Distributed</span><span class="skill-tag">Serverless</span><span class="skill-tag">Monolithic</span>
-        </div>
-      </div>
-
-      <div class="skill-card reveal">
-        <span class="skill-icon">🔷</span>
-        <div class="skill-title">Architecture Patterns</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Clean Architecture</span><span class="skill-tag">CQRS</span><span class="skill-tag">SOLID</span><span class="skill-tag">DDD</span><span class="skill-tag">Vertical Slice</span><span class="skill-tag">Repository</span>
-        </div>
-      </div>
-
-      <div class="skill-card reveal">
-        <span class="skill-icon">☁️</span>
-        <div class="skill-title">Cloud & DevOps</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Azure App Service</span><span class="skill-tag">Cosmos DB</span><span class="skill-tag">Service Bus</span><span class="skill-tag">Key Vault</span><span class="skill-tag">App Insights</span><span class="skill-tag">Docker</span><span class="skill-tag">CI/CD</span><span class="skill-tag">AWS S3</span>
-        </div>
-      </div>
-
-      <div class="skill-card reveal">
-        <span class="skill-icon">🤖</span>
-        <div class="skill-title">AI / ML</div>
-        <div class="skill-tags">
-          <span class="skill-tag">OpenAI LLM</span><span class="skill-tag">LangChain</span><span class="skill-tag">RAG</span><span class="skill-tag">Prompt Engineering</span><span class="skill-tag">Vector DBs</span><span class="skill-tag">AI Chatbots</span>
-        </div>
-      </div>
-
-      <div class="skill-card reveal">
-        <span class="skill-icon">🗄️</span>
-        <div class="skill-title">Databases</div>
-        <div class="skill-tags">
-          <span class="skill-tag">SQL Server</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">MongoDB</span><span class="skill-tag">Redis</span><span class="skill-tag">Cosmos DB</span><span class="skill-tag">SSMS</span>
-        </div>
-      </div>
-
-      <div class="skill-card reveal">
-        <span class="skill-icon">⚡</span>
-        <div class="skill-title">Real-Time & Integration</div>
-        <div class="skill-tags">
-          <span class="skill-tag">SendBird</span><span class="skill-tag">Agora SDK</span><span class="skill-tag">SignalR</span><span class="skill-tag">Pusher</span><span class="skill-tag">Firebase</span><span class="skill-tag">WebSockets</span><span class="skill-tag">Payment Gateways</span>
-        </div>
-      </div>
-
-      <div class="skill-card reveal">
-        <span class="skill-icon">🔐</span>
-        <div class="skill-title">Security</div>
-        <div class="skill-tags">
-          <span class="skill-tag">JWT</span><span class="skill-tag">OAuth2</span><span class="skill-tag">RBAC</span><span class="skill-tag">API Gateway</span><span class="skill-tag">SSL/TLS</span>
-        </div>
-      </div>
-
-      <div class="skill-card reveal">
-        <span class="skill-icon">👥</span>
-        <div class="skill-title">Leadership</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Cross-Functional Teams</span><span class="skill-tag">Agile/Scrum</span><span class="skill-tag">Sprint Planning</span><span class="skill-tag">Mentoring</span><span class="skill-tag">Code Reviews</span>
-        </div>
-      </div>
-
+  <section class="section wrap" id="skills">
+    <div class="section-head">
+      <span class="kicker">Technical stack</span>
+      <h2>What I build with, layer by layer</h2>
+      <p>The stack I use day to day to take a system from client request to persisted, monitored, production state.</p>
     </div>
-  </div>
-</section>
+    <div class="stack">
+      <div class="layer">
+        <div class="lname">Real-time &amp; integration<small>edge of the system</small></div>
+        <div class="tags"><span class="tag">SignalR</span><span class="tag">SendBird</span><span class="tag">Agora SDK</span><span class="tag">Pusher</span><span class="tag">Firebase</span><span class="tag">WebSockets</span><span class="tag">Webhooks</span><span class="tag">Payment gateways</span></div>
+      </div>
+      <div class="layer">
+        <div class="lname">Languages &amp; backend<small>application layer</small></div>
+        <div class="tags"><span class="tag">C#</span><span class="tag">.NET Core / .NET 6+</span><span class="tag">ASP.NET</span><span class="tag">Web API</span><span class="tag">Entity Framework Core</span><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Async programming</span></div>
+      </div>
+      <div class="layer">
+        <div class="lname">Architecture<small>how the code is organized</small></div>
+        <div class="tags"><span class="tag">Microservices</span><span class="tag">Event-driven</span><span class="tag">Clean Architecture</span><span class="tag">CQRS</span><span class="tag">DDD</span><span class="tag">Vertical Slice</span><span class="tag">SOLID</span></div>
+      </div>
+      <div class="layer">
+        <div class="lname">AI / ML<small>the newest layer</small></div>
+        <div class="tags"><span class="tag">OpenAI API</span><span class="tag">Claude / Anthropic API</span><span class="tag">LangChain</span><span class="tag">RAG &amp; context management</span><span class="tag">Prompt engineering</span><span class="tag">Vector databases</span></div>
+      </div>
+      <div class="layer">
+        <div class="lname">Data<small>where state lives</small></div>
+        <div class="tags"><span class="tag">SQL Server</span><span class="tag">PostgreSQL</span><span class="tag">MongoDB</span><span class="tag">Redis</span><span class="tag">Cosmos DB</span><span class="tag">SSMS</span></div>
+      </div>
+      <div class="layer">
+        <div class="lname">Cloud, security &amp; DevOps<small>runs and protects it all</small></div>
+        <div class="tags"><span class="tag">Azure App Service</span><span class="tag">Azure Functions</span><span class="tag">Service Bus</span><span class="tag">Blob Storage</span><span class="tag">Key Vault</span><span class="tag">App Insights</span><span class="tag">AWS S3</span><span class="tag">Docker</span><span class="tag">Azure DevOps CI/CD</span><span class="tag">JWT / OAuth2</span><span class="tag">RBAC</span></div>
+      </div>
+    </div>
+  </section>
 
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="container">
-    <div class="section-label reveal">Career Timeline</div>
-    <h2 class="section-title reveal">Work <span>Experience</span></h2>
+  <section class="section wrap" id="experience">
+    <div class="section-head">
+      <span class="kicker">Career</span>
+      <h2>Where I've built this</h2>
+      <p>Nine years, three companies, one throughline: take a system, its team, or both, and make them scale.</p>
+    </div>
     <div class="timeline">
-
-      <div class="timeline-item reveal">
-        <div class="timeline-date">Jan 2019 — Present · 6+ Years</div>
-        <div class="timeline-title">Tech Lead</div>
-        <div class="timeline-company">Netway India Pvt Ltd (Astroyogi) · Gurugram</div>
-        <ul class="timeline-bullets">
-          <li>Leading cross-functional team of 8–10 engineers spanning Backend, AI, Android, iOS & Web across full SDLC</li>
-          <li>Architected backend for <strong style="color:#e2e8f0;">Yogi Live</strong> — real-time chat & streaming platform handling 20K+ daily consultations at 99.9% uptime</li>
-          <li>Enforced clean architecture, SOLID & CQRS best practices — reduced technical debt 40% across 5M+ user systems</li>
-          <li>Spearheaded Azure DevOps CI/CD automation, cutting release cycles 60%</li>
-          <li>Delivered LLM-based AI chatbot (OpenAI + LangChain + FastAPI) on Azure for automated customer support</li>
-          <li>Optimized performance via Redis caching & async programming — 50% throughput gain</li>
+      <div class="tl-item">
+        <div class="tl-date">Jan 2019 — Present</div>
+        <div class="tl-role">Senior .NET Tech Lead</div>
+        <div class="tl-org">Netway India Pvt Ltd (Astroyogi) · Gurugram</div>
+        <ul>
+          <li>Lead 8–10 engineers directly, coordinating a cross-functional pod of 10–15 across <b>Backend, AI, Android, iOS &amp; Web</b> through sprint planning, code reviews and appraisals</li>
+          <li>Architected the backend for <b>Yogi Live</b> — real-time chat &amp; streaming on .NET Core, Agora SDK and SendBird, using Clean Architecture and CQRS</li>
+          <li>Enforced SOLID and event-driven patterns via Azure Service Bus across a 5M+ user system — <b>cut technical debt 40%</b> and API response times 35%</li>
+          <li>Rebuilt the Azure DevOps CI/CD pipeline — <b>release cycles down 60%</b> — and added JWT/OAuth2, an API gateway and NLog-based monitoring</li>
+          <li>Shipped an LLM-based AI assistant (OpenAI + Claude/Anthropic + LangChain + FastAPI) with RAG pipelines for automated customer support on Azure</li>
+          <li>Lifted throughput <b>50%</b> with async programming and Redis caching, scaling SendBird, Agora, Pusher and Firebase to millions of concurrent connections</li>
         </ul>
-        <div class="highlight-badge">🏆 Performer of the Year 2020–21 &nbsp;|&nbsp; Best Contribution Award 2018–19</div>
+        <span class="award">Performer of the Year, 2020–21 · Best Contribution Award, 2018–19</span>
       </div>
-
-      <div class="timeline-item reveal">
-        <div class="timeline-date">Sep 2017 — Dec 2018</div>
-        <div class="timeline-title">Senior Software Developer</div>
-        <div class="timeline-company">Tetraskelion Software Pvt Ltd · Jaipur</div>
-        <ul class="timeline-bullets">
-          <li>Built e-commerce and travel booking platforms using .NET Core, ASP.NET MVC & SQL Server</li>
-          <li>Optimized database queries with indexing strategies — improved API response times 30%</li>
+      <div class="tl-item">
+        <div class="tl-date">Sep 2017 — Dec 2018</div>
+        <div class="tl-role">Senior Software Developer</div>
+        <div class="tl-org">Tetraskelion Software Pvt Ltd · Jaipur</div>
+        <ul>
+          <li>Built e-commerce and travel-booking platforms on .NET Core, ASP.NET MVC and SQL Server, with REST APIs and payment gateway integrations</li>
+          <li>Optimized database queries and indexing strategies — <b>API response times down 30%</b> — using Entity Framework and the repository pattern in Agile sprints</li>
         </ul>
-        <div class="highlight-badge">⭐ Star Award 2018–19</div>
+        <span class="award">Star Award, 2018–19</span>
       </div>
-
-      <div class="timeline-item reveal">
-        <div class="timeline-date">Jun 2016 — May 2017</div>
-        <div class="timeline-title">Junior Software Engineer</div>
-        <div class="timeline-company">DreamSoft4U Pvt Ltd · Jaipur</div>
-        <ul class="timeline-bullets">
-          <li>Developed healthcare billing & insurance claim applications using ASP.NET, SQL Server & RESTful web services</li>
+      <div class="tl-item">
+        <div class="tl-date">Jun 2016 — May 2017</div>
+        <div class="tl-role">Junior Software Engineer</div>
+        <div class="tl-org">DreamSoft4U Pvt Ltd · Jaipur</div>
+        <ul>
+          <li>Built healthcare billing and insurance-claim applications with ASP.NET, SQL Server and RESTful web services, using TDD and stored-procedure optimization</li>
         </ul>
       </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="container">
-    <div class="section-label reveal">Featured Work</div>
-    <h2 class="section-title reveal">Key <span>Projects</span></h2>
-    <div class="projects-grid">
-
-      <div class="project-card reveal">
-        <span class="project-emoji">💬</span>
-        <div class="project-name">Yogi Live</div>
-        <div class="project-desc">Real-time chat & live streaming platform for astrology consultations. Built with SendBird, Agora SDK, Pusher & .NET Core microservices architecture.</div>
-        <div class="project-impact">20K+ daily consultations · 5M+ users</div>
-      </div>
-
-      <div class="project-card reveal">
-        <span class="project-emoji">🤖</span>
-        <div class="project-name">AI Assistant Chatbot</div>
-        <div class="project-desc">LLM-powered customer support bot using OpenAI, LangChain & FastAPI deployed on Azure. Automated support workflows at scale with RAG architecture.</div>
-        <div class="project-impact">Automated customer support · Azure deployed</div>
-      </div>
-
-      <div class="project-card reveal">
-        <span class="project-emoji">📞</span>
-        <div class="project-name">VoIP & Chat APIs</div>
-        <div class="project-desc">Scalable OBD/VoIP system with queue management, real-time messaging & WebSocket notifications serving millions of concurrent connections.</div>
-        <div class="project-impact">99.9% uptime · Millions of connections</div>
-      </div>
-
+  <section class="section wrap" id="projects">
+    <div class="section-head">
+      <span class="kicker">Selected work</span>
+      <h2>Three systems, three different problems</h2>
+      <p>A live-streaming platform, an AI support layer, and the real-time messaging backbone underneath both.</p>
     </div>
-  </div>
-</section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="container">
-    <div class="contact-section reveal">
-      <div class="section-label" style="justify-content:center;">Let's Connect</div>
-      <div class="contact-title">Open to New Opportunities</div>
-      <p class="contact-sub">
-        Available for Tech Lead roles, Architecture Consulting, AI/LLM Integration,<br>
-        Fractional Tech Lead engagements & Freelance projects.
-      </p>
+    <div class="proj">
+      <div class="proj-head">
+        <div>
+          <h3>Yogi Live</h3>
+          <div class="role">Real-time chat &amp; live-streaming platform for astrology consultations</div>
+        </div>
+        <div class="proj-metrics">
+          <div><span class="n">20K+</span><span class="l">daily consultations</span></div>
+          <div><span class="n">5M+</span><span class="l">users served</span></div>
+          <div><span class="n">99.9%</span><span class="l">uptime</span></div>
+        </div>
+      </div>
+      <div class="proj-body">
+        <p>The backend behind Astroyogi's live consultation product. A client's video/chat session is authenticated, routed through an API gateway, and handed off to SendBird and Agora SDK for the real-time layer, while .NET Core microservices built on Clean Architecture and CQRS handle session state, billing events and consultation history through Azure Service Bus. Redis absorbs hot read traffic; Cosmos DB holds the durable record.</p>
+        <div class="flow">
+          <span class="node">Client (Web/Android/iOS)</span><span class="arrow">→</span>
+          <span class="node">API Gateway + JWT/OAuth2</span><span class="arrow">→</span>
+          <span class="node">Agora SDK / SendBird</span><span class="arrow">→</span>
+          <span class="node">.NET Core microservices</span><span class="arrow">→</span>
+          <span class="node">Redis</span><span class="arrow">+</span>
+          <span class="node">Cosmos DB</span>
+        </div>
+        <div class="proj-stack">stack: .NET Core · Azure Service Bus · SendBird · Agora SDK · Pusher · Redis · Cosmos DB · CQRS · Clean Architecture</div>
+      </div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-head">
+        <div>
+          <h3>AI Support Assistant</h3>
+          <div class="role">LLM-powered customer support with retrieval-augmented context</div>
+        </div>
+        <div class="proj-metrics">
+          <div><span class="n">RAG</span><span class="l">context pipeline</span></div>
+          <div><span class="n">Azure</span><span class="l">hosted</span></div>
+        </div>
+      </div>
+      <div class="proj-body">
+        <p>An end-to-end assistant built to take routine support volume off human agents. Incoming queries are embedded and matched against a vector store, the retrieved context and conversation history are assembled by LangChain, and the request is served through a FastAPI layer calling OpenAI and Claude/Anthropic models, deployed on Azure alongside the rest of the platform.</p>
+        <div class="flow">
+          <span class="node">Support query</span><span class="arrow">→</span>
+          <span class="node">Vector DB retrieval</span><span class="arrow">→</span>
+          <span class="node">LangChain context</span><span class="arrow">→</span>
+          <span class="node">FastAPI</span><span class="arrow">→</span>
+          <span class="node">OpenAI / Claude API</span><span class="arrow">→</span>
+          <span class="node">Response</span>
+        </div>
+        <div class="proj-stack">stack: OpenAI API · Claude/Anthropic API · LangChain · RAG · FastAPI · Vector databases · Azure</div>
+      </div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-head">
+        <div>
+          <h3>VoIP &amp; Real-Time Messaging Backbone</h3>
+          <div class="role">Queue-managed OBD/VoIP and notification layer</div>
+        </div>
+        <div class="proj-metrics">
+          <div><span class="n">Millions</span><span class="l">concurrent connections</span></div>
+        </div>
+      </div>
+      <div class="proj-body">
+        <p>The shared infrastructure that Yogi Live and the wider platform call on for outbound dialing and push delivery: queue-managed OBD/VoIP calling, WebSocket-based live notifications, and webhook fan-out, sized to hold up under the same 5M-user load as the rest of the system.</p>
+        <div class="flow">
+          <span class="node">Trigger event</span><span class="arrow">→</span>
+          <span class="node">Message queue</span><span class="arrow">→</span>
+          <span class="node">OBD/VoIP worker</span><span class="arrow">+</span>
+          <span class="node">WebSocket push</span><span class="arrow">→</span>
+          <span class="node">Firebase / Webhooks</span>
+        </div>
+        <div class="proj-stack">stack: Azure Functions · WebSockets · Firebase · Webhooks · Queue management · .NET Core</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="contact">
+    <div class="contact">
+      <div>
+        <h2>Open to Tech Lead &amp; architecture roles</h2>
+        <p>Available for Tech Lead positions, architecture consulting, AI/LLM integration work, fractional tech lead engagements, and select freelance projects — in the GCC, Europe, Malaysia, or remote.</p>
+      </div>
       <div class="contact-links">
-        <a href="mailto:gsumeet95@gmail.com" class="contact-link">✉ gsumeet95@gmail.com</a>
-        <a href="https://linkedin.com/in/sumeetgupta" class="contact-link" target="_blank">in LinkedIn</a>
-        <a href="tel:+919785678298" class="contact-link">📞 +91-9785678298</a>
-        <a href="#" class="contact-link">📄 Download CV</a>
+        <a href="mailto:gsumeet95@gmail.com"><span>Email</span><span>gsumeet95@gmail.com</span></a>
+        <a href="tel:+919785678298"><span>Phone</span><span>+91 97856 78298</span></a>
+        <a href="https://www.linkedin.com/in/sumeet-gupta-107ab698" target="_blank" rel="noopener"><span>LinkedIn</span><span>/in/sumeet-gupta</span></a>
+        <a href="#top"><span>Based in</span><span>Gurugram, India</span></a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <div class="container">
-    <p>Built by Sumeet Gupta · Gurugram, India · <span style="color:var(--accent)">gsumeet95@gmail.com</span></p>
-  </div>
+</main>
+
+<footer class="wrap">
+  <span>© 2026 Sumeet Gupta</span>
+  <span>Built &amp; maintained from Gurugram, India</span>
 </footer>
 
-<script>
-// Custom cursor
-const cursor = document.getElementById('cursor');
-const ring = document.getElementById('cursorRing');
-let mx = 0, my = 0, rx = 0, ry = 0;
-document.addEventListener('mousemove', e => {
-  mx = e.clientX; my = e.clientY;
-  cursor.style.left = mx - 4 + 'px';
-  cursor.style.top = my - 4 + 'px';
-});
-function animRing() {
-  rx += (mx - rx) * 0.15;
-  ry += (my - ry) * 0.15;
-  ring.style.left = rx - 16 + 'px';
-  ring.style.top = ry - 16 + 'px';
-  requestAnimationFrame(animRing);
-}
-animRing();
-
-// Scroll reveal
-const observer = new IntersectionObserver(entries => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('visible'), i * 80);
-    }
-  });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
 </body>
 </html>
